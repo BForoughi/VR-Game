@@ -28,9 +28,15 @@ public class BiteBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-     if boxCollider.Comparetag("biteable")
-        {
-
-        }    
+      
     }
+
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    if boxCollider.Comparetag("biteable")
+    //    {
+
+    //    }
+    //}
+    
 }
