@@ -1,6 +1,7 @@
 fileFormatVersion: 2
 guid: 64e2948d04014476896be6975d0f83cc
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 timeCreated: 1502926684
 licenseType: Pro
 PluginImporter:
@@ -128,6 +129,8 @@ PluginImporter:
           CompileFlags: 
           FrameworkDependencies: 
 =======
+=======
+>>>>>>> Stashed changes
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -175,6 +178,9 @@ PluginImporter:
       enabled: 1
       settings:
         CPU: x86_64
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
   userData: 
   assetBundleName: 
