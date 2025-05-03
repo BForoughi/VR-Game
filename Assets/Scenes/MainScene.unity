@@ -3480,6 +3480,7 @@ MonoBehaviour:
     actionPath: 
     needsReinit: 0
   boxCollider: {fileID: 0}
+  sphereCollider: {fileID: 0}
 --- !u!114 &798212401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3496,6 +3497,7 @@ MonoBehaviour:
     actionPath: /actions/default/in/bite
     needsReinit: 0
   boxCollider: {fileID: 1236454919}
+  sphereCollider: {fileID: 0}
 --- !u!1 &827941110
 GameObject:
   m_ObjectHideFlags: 0
@@ -4658,7 +4660,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: b5bcf06e5e2f2f041b7bf61e6a2c1c14, type: 2}
+  m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
 --- !u!1 &1179199948
 GameObject:
