@@ -2823,7 +2823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input:
-    actionPath: /actions/platformer/in/Move
+    actionPath: /actions/default/in/Locomotion
     needsReinit: 0
   speed: 10
   CharCon: {fileID: 798212397}
