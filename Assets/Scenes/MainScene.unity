@@ -2825,7 +2825,7 @@ MonoBehaviour:
   input:
     actionPath: /actions/default/in/Locomotion
     needsReinit: 0
-  speed: 10
+  speed: 5.8
   CharCon: {fileID: 798212397}
   HeadLoco: 1
 --- !u!143 &798212397
@@ -7288,9 +7288,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   input:
-    actionPath: /actions/default/in/locomotion
+    actionPath: /actions/default/in/locomotion2
     needsReinit: 0
-  speed: 1
+  speed: 4.08
   CharCon: {fileID: 2131891846}
   HeadLoco: 1
 --- !u!1660057539 &9223372036854775807
