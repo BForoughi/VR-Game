@@ -105,11 +105,11 @@ namespace Valve.VR
             }
         }
         
-        public virtual SteamVR_Action_Boolean bite
+        public virtual SteamVR_Action_Vector2 locomotion2
         {
             get
             {
-                return SteamVR_Actions.default_bite;
+                return SteamVR_Actions.default_locomotion2;
             }
         }
         
