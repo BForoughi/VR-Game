@@ -2,13 +2,13 @@
   "source": "Unity",
   "applications": [
     {
-      "app_key": "application.generated.unity.vrgamebeyondreality.exe",
+      "app_key": "application.generated.unity.vrgame.exe",
       "launch_type": "url",
       "url": "steam://launch/",
       "action_manifest_path": "C:\\Users\\488714\\Documents\\GitHub\\VR-Game\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
-          "name": "VR Game - Beyond Reality [Testing]"
+          "name": "VR-Game [Testing]"
         }
       }
     }
