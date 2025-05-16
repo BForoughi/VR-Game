@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
 using Valve.VR.InteractionSystem;
+using static UnityEngine.GraphicsBuffer;
 
 
 public class BiteBehaviour : MonoBehaviour
 {
 
     public SteamVR_Action_Boolean input;
-    public BoxCollider boxCollider;
-    public SphereCollider sphereCollider;
+    public SphereCollider sphereCollider; //collider of the VR player head
 
 
     void Awake()
@@ -30,13 +30,13 @@ public class BiteBehaviour : MonoBehaviour
     {
 
     }
-
-    //private void OnCollisionEnter(Collision collision)
-    //{
-    //    if boxCollider.Comparetag("biteable")
-    //    {
-
-    //    }
-    //}
+    private void OnCollisionEnter(Collision collision)
+    {
+        //if boxCollider.Comparetag("biteable")
+        if (collision.gameObject.tag.Equals("Jaw") == true)
+        {
+            Destroy(this.gameObject);
+        }
+    }
 
 }

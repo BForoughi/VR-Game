@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class EnemyFootsteps : MonoBehaviour
 {
-    public AudioClip[] Footsteps;
-    public AudioSource audioSource;
+    public AudioClip Footsteps;
+    private AudioSource audioSource;
     private float oldPosition;
 
     // Start is called before the first frame update
@@ -37,10 +37,10 @@ public class EnemyFootsteps : MonoBehaviour
             PlayFootsteps();
         }
 
-        if (oldPosition == oldPosition)
-        {
-            audioSource.Stop();
-        }
+        //if (oldPosition == oldPosition)
+        //{
+        //    audioSource.Stop();
+        //}
         //if (IsMoving())
         //{
         //    PlayFootsteps();
@@ -68,7 +68,8 @@ public class EnemyFootsteps : MonoBehaviour
     }
     private void ChangeClip(int num)
     {
-        audioSource.clip = Footsteps[num-1];
+
+        //audioSource.clip = Footsteps[num-1];
 
     }
     private void StopFootsteps()
