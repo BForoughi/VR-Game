@@ -4,8 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Biteable
   - Jaw
+  - Bitable
   layers:
   - Default
   - TransparentFX
