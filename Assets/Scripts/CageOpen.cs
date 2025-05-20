@@ -4,23 +4,32 @@ using UnityEngine;
 
 public class CageOpen : MonoBehaviour
 {
-    public AudioClip CageOpen;
+    public AudioClip cageOpen;
     private AudioSource audioSource;
+
+    public bool testbutton = false;
     // Start is called before the first frame update
     void Start()
     {
-        audioSource = getObject.GetComponent<AudioSource>();
+        audioSource = gameObject.GetComponent<AudioSource>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        openCageDoor();
+        if (testbutton)
+        {
+            openCageDoor();
+            testbutton = false;
+
+        }
+        
 
     }
     private void openCageDoor()
     {
-        audioSource.play();
+        audioSource.PlayOneShot(cageOpen);
+
     }
 }
