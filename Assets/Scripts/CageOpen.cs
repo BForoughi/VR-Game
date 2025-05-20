@@ -15,11 +15,8 @@ public class CageOpen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for (int i = 0; i < 1; i++) {
-            openCageDoor();
-        }
-        
 
+        //openCageDoor();
     }
     private void openCageDoor()
     {
