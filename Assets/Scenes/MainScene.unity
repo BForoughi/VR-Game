@@ -6210,11 +6210,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 761154503}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &798299384 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 6701881552132391891, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
-  m_PrefabInstance: {fileID: 6331639142454782104}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &813964005
 GameObject:
   m_ObjectHideFlags: 0
@@ -6961,8 +6956,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   destination: {x: 0, y: 0, z: 0}
-  Player: {fileID: 798299384}
-  patrol: {fileID: 0}
   agent: {fileID: 914951055}
   indicator: {fileID: 1305019476}
   spotted: 1
@@ -7046,7 +7039,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
