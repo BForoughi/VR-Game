@@ -13,7 +13,18 @@ public class BasicEnemyPatrol : MonoBehaviour
     public bool spotted; //determines whether the enemy can see the player
     public float searchTime;
 
-    
+    public Animator animator;
+
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+
+        //once player opens the cage, or enters the room
+        animator.SetBool("isPatrolling", true);
+    }
+
+
     void Update()
     {
         if (spotted == false) //enemy will follow the patrol path

@@ -6852,6 +6852,7 @@ GameObject:
   - component: {fileID: 914951055}
   - component: {fileID: 914951058}
   - component: {fileID: 914951059}
+  - component: {fileID: 914951060}
   m_Layer: 0
   m_Name: Cultist Body
   m_TagString: Untagged
@@ -6966,6 +6967,7 @@ MonoBehaviour:
   indicator: {fileID: 1305019476}
   spotted: 1
   searchTime: 1
+  animator: {fileID: 914951060}
 --- !u!114 &914951057
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7105,6 +7107,27 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.7028801, y: 1.0000001, z: 6.0773926}
   m_Center: {x: -0.15627919, y: -0.00000010790385, z: 1.3605419}
+--- !u!95 &914951060
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914951050}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 84d9ba22f3d0ddc428337c9781ce6d0e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &922375771
 GameObject:
   m_ObjectHideFlags: 0
@@ -7763,6 +7786,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 914951051}
+  - {fileID: 1998690298}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &999818336
@@ -16553,11 +16577,11 @@ Transform:
   m_GameObject: {fileID: 1998690297}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.31, y: 6.92, z: -14.45}
+  m_LocalPosition: {x: 1.3299999, y: 0, z: 0.21000004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 995759869}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1998690299
 Animator:
@@ -17501,39 +17525,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6701881552132391891, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.65
+      value: -13.81
       objectReference: {fileID: 0}
     - target: {fileID: 6701881552132391891, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 8.12
+      value: 8.67
       objectReference: {fileID: 0}
     - target: {fileID: 6701881552132391891, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6.15
+      value: 5.95
       objectReference: {fileID: 0}
     - target: {fileID: 6701881552132391891, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.52312493
+      value: 0.62072533
       objectReference: {fileID: 0}
     - target: {fileID: 6701881552132391891, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.030025763
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6701881552132391891, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.8503274
+      value: -0.7840282
       objectReference: {fileID: 0}
     - target: {fileID: 6701881552132391891, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.04880618
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6701881552132391891, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -6.57
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6701881552132391891, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -116.8
+      value: -103.262
       objectReference: {fileID: 0}
     - target: {fileID: 6701881552132391891, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -17555,6 +17579,5 @@ SceneRoots:
   - {fileID: 6331639142454782104}
   - {fileID: 1368227399}
   - {fileID: 605020186}
-  - {fileID: 1998690298}
   - {fileID: 995759869}
   - {fileID: 491713455}
