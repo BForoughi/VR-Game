@@ -863,8 +863,7 @@ GameObject:
   - component: {fileID: 133504885}
   - component: {fileID: 133504884}
   - component: {fileID: 133504883}
-  - component: {fileID: 133504882}
-  - component: {fileID: 133504880}
+  - component: {fileID: 133504886}
   m_Layer: 0
   m_Name: 'Cage Lever '
   m_TagString: Bitable
@@ -881,126 +880,13 @@ Transform:
   m_GameObject: {fileID: 133504878}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
-  m_LocalPosition: {x: -19.1, y: 1.97, z: -0.2}
+  m_LocalPosition: {x: -19.1, y: 1.1, z: -0.2}
   m_LocalScale: {x: 1.0541526, y: 0.08173938, z: 0.16886449}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1131101157}
   m_Father: {fileID: 1526865015}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
---- !u!82 &133504880
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133504878}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &133504882
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 133504878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17942bd0f084abb49909c502c24086c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  biteAction:
-    actionPath: /actions/default/in/Bite
-    needsReinit: 0
-  openDoor: 0
-  sphereCollider: {fileID: 446312587}
 --- !u!65 &133504883
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1016,7 +902,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1072,6 +958,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 133504878}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &133504886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133504878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e66c02a376e04f43b62036f492b311f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  biteBehaviour: {fileID: 446312588}
+  openDoor: 0
 --- !u!1 &134032311
 GameObject:
   m_ObjectHideFlags: 0
@@ -4014,6 +3914,7 @@ GameObject:
   - component: {fileID: 446312585}
   - component: {fileID: 446312587}
   - component: {fileID: 446312586}
+  - component: {fileID: 446312588}
   m_Layer: 26
   m_Name: 'JawCollider '
   m_TagString: Jaw
@@ -4078,12 +3979,30 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.12
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &446312588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446312584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17942bd0f084abb49909c502c24086c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  biteAction:
+    actionPath: /actions/default/in/Bite
+    needsReinit: 0
+  jawCollision: 0
+  bitten: 0
+  sphereCollider: {fileID: 446312587}
 --- !u!1 &448450433
 GameObject:
   m_ObjectHideFlags: 0
@@ -12639,6 +12558,7 @@ GameObject:
   - component: {fileID: 1635766968}
   - component: {fileID: 1635766971}
   - component: {fileID: 1635766972}
+  - component: {fileID: 1635766973}
   m_Layer: 0
   m_Name: Cage Door
   m_TagString: Untagged
@@ -12765,8 +12685,105 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa59aca0700fb4739b1714a8fe9bd734, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cageOpen: {fileID: 8300000, guid: d8edb1b1d8c394b7d9a88e0861f09fd2, type: 3}
   animator: {fileID: 1635766971}
-  biteBehaviour: {fileID: 133504882}
+  leverBreak: {fileID: 133504886}
+--- !u!82 &1635766973
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635766966}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1661309273
 GameObject:
   m_ObjectHideFlags: 0
@@ -17961,6 +17978,10 @@ PrefabInstance:
       propertyPath: clearanceCheckMask.m_Bits
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2972703408839746080, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
+      propertyPath: m_Center.y
+      value: 0.75
+      objectReference: {fileID: 0}
     - target: {fileID: 4910306928669177621, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
       propertyPath: clearanceCheckMask.m_Bits
       value: 4294967295
@@ -18005,7 +18026,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3104979855780544666, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 6119311789871236872, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}

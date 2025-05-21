@@ -7,7 +7,7 @@ public class CageOpen : MonoBehaviour
     public AudioClip cageOpen;
     private AudioSource audioSource;
     public Animator animator;
-    public BiteBehaviour biteBehaviour;
+    public LeverBreak leverBreak;
 
 
     // Start is called before the first frame update
@@ -19,9 +19,10 @@ public class CageOpen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (biteBehaviour.openDoor == true)
+        if (leverBreak.openDoor == true)
         {
             openCageDoor();
+            leverBreak.openDoor = false;
         }
         
     }
