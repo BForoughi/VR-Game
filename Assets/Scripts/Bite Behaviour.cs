@@ -54,7 +54,6 @@ public class BiteBehaviour : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        //if boxCollider.Comparetag("biteable")
         if (collision.gameObject.tag.Equals("Jaw") == true)
         {
             bitten = true;

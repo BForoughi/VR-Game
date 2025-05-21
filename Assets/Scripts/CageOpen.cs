@@ -6,30 +6,21 @@ public class CageOpen : MonoBehaviour
 {
     public AudioClip cageOpen;
     private AudioSource audioSource;
-
-    public bool testbutton = false;
     // Start is called before the first frame update
     void Start()
     {
         audioSource = gameObject.GetComponent<AudioSource>();
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (testbutton)
-        {
-            openCageDoor();
-            testbutton = false;
 
-        }
-        
-
+        //openCageDoor();
     }
     private void openCageDoor()
     {
         audioSource.PlayOneShot(cageOpen);
-
+        Debug.Log("playing cage sound");
     }
 }
