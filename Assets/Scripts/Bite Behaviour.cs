@@ -11,10 +11,9 @@ public class BiteBehaviour : MonoBehaviour
 {
 
     public SteamVR_Action_Boolean biteAction; //accesses the controllers input
-    private GameObject heldObject;
-    private GameObject touchingObject;
     public bool jawCollision;
     public bool bitten;
+
 
     public SphereCollider sphereCollider; //collider of the VR player head
 
@@ -40,7 +39,6 @@ public class BiteBehaviour : MonoBehaviour
             jawCollision = true;
             //Debug.Log("jaw is touching " + gameObject.name + " and " + other.gameObject.name + " Col? " + jawCollision);
         }
-        touchingObject = other.gameObject;
 
     }
     private void OnTriggerStay(Collider other)
@@ -50,6 +48,7 @@ public class BiteBehaviour : MonoBehaviour
             jawCollision = true;
             //Debug.Log("jaw is staying " + gameObject.name + " and " + other.gameObject.name + " Col? " + jawCollision);
         }
+       
     }
 
     void OnTriggerExit(Collider other)
