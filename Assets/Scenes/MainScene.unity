@@ -883,8 +883,7 @@ Transform:
   m_LocalPosition: {x: -19.1, y: 1.1, z: -0.2}
   m_LocalScale: {x: 1.0541526, y: 0.08173938, z: 0.16886449}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1131101157}
+  m_Children: []
   m_Father: {fileID: 1526865015}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!65 &133504883
@@ -4629,6 +4628,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 559105882}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &562803881 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6701881552132391891, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
+  m_PrefabInstance: {fileID: 6331639142454782104}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &570802081
 GameObject:
   m_ObjectHideFlags: 0
@@ -6949,7 +6953,7 @@ Transform:
   m_GameObject: {fileID: 914951050}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.37, y: 1.79, z: 0}
+  m_LocalPosition: {x: 1.37, y: 2.533, z: 0}
   m_LocalScale: {x: 1.869179, y: 4.419093, z: 1.7642}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -7088,10 +7092,10 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
+  MinDistance: 2.7149887
+  MaxDistance: 19.68752
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -8852,19 +8856,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1131101156}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1.939}
+  m_LocalScale: {x: 0.004964332, y: 0.0024654856, z: 0.22464992}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 155207489}
-  m_Father: {fileID: 133504879}
+  m_Father: {fileID: 562803881}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.25, y: 0.33331}
+  m_SizeDelta: {x: 1101, y: 514}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1131101158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8904,7 +8908,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!223 &1131101160
 Canvas:
   m_ObjectHideFlags: 0
@@ -8914,8 +8918,8 @@ Canvas:
   m_GameObject: {fileID: 1131101156}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
-  m_Camera: {fileID: 0}
+  m_RenderMode: 2
+  m_Camera: {fileID: 2111271108}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -9966,7 +9970,7 @@ Transform:
   m_GameObject: {fileID: 1305019476}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.16, y: 0.52725744, z: 0.42512184}
+  m_LocalPosition: {x: 0.16, y: 0.52725744, z: 0.498}
   m_LocalScale: {x: 0.17561185, y: 0.07427995, z: 0.18606167}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11554,8 +11558,8 @@ Transform:
   m_GameObject: {fileID: 1526865014}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.69765157, z: -0, w: -0.7164372}
-  m_LocalPosition: {x: 20.23, y: 0, z: -35.2}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 20.446, y: -0.08, z: -32.353}
+  m_LocalScale: {x: 0.85858, y: 0.85858, z: 0.85858}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 133504879}
@@ -17506,6 +17510,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067751223}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!20 &2111271108 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 3341813044543691824, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
+  m_PrefabInstance: {fileID: 6331639142454782104}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2115583888
 GameObject:
   m_ObjectHideFlags: 0
@@ -18030,6 +18039,9 @@ PrefabInstance:
     - {fileID: 3104979855780544666, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 6701881552132391891, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
+      insertIndex: 0
+      addedObject: {fileID: 1131101157}
     - targetCorrespondingSourceObject: {fileID: 6119311789871236872, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
       insertIndex: -1
       addedObject: {fileID: 446312585}
