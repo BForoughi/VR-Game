@@ -28,6 +28,7 @@ public class BiteBehaviour : MonoBehaviour
         if (biteAction.GetStateDown(SteamVR_Input_Sources.Any) && jawCollision == true)
         {
             bitten = true;
+            //call audio function
         }
 
     }
@@ -59,5 +60,15 @@ public class BiteBehaviour : MonoBehaviour
             //Debug.Log("Col false? " + jawCollision);
         }
     }
+
+
+
+    //audio function
+
+
+
+
+
+
 }
 

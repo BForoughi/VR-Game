@@ -10,18 +10,29 @@ public class CheckBreathingSound : MonoBehaviour
     private AudioSource audioSource;
     private bool playing = true;
 
+    public float delay = 23f; //can be changed to match enemy speed
+    float startingTime = 0f;
+
     void Start()
     {
+       
+        if (playing == true)
+        {
+            audioSource.PlayOneShot(breathing);
+            playing = false;    
+        }
         audioSource = GetComponent<AudioSource>();
+        startingTime = Time.time;
     }
 
     void Update()
     {
-        if (playing == true)
+
+        if (Time.time > startingTime + delay) //plays footsteps after the delay time has passed
         {
+            startingTime = Time.time;
             playBreathing();
-            playing = false;    
-        }  
+        }
     }
 
     void playBreathing()
