@@ -7,71 +7,25 @@ using static UnityEngine.GraphicsBuffer;
 
 
 public class WSBiteBehaviour : MonoBehaviour
+
 {
-
-    public SteamVR_Action_Boolean biteAction; //accesses the controllers input
-    private GameObject heldObject;
-    private GameObject touchingObject;
-    private bool bitten;
-
-    public SphereCollider sphereCollider; //collider of the VR player head
+    public EnemyStatus enemyStatus;
+    public BiteBehaviour biteBehaviour;
 
 
-
-    //void Awake()
-    //{
-    //    DontDestroyOnLoad(this.gameObject);
-    //}
+    private void Start()
+    {
+        enemyStatus = GetComponentInParent<EnemyStatus>();
+    }
 
 
 
     void Update()
     {
-        if (biteAction.GetStateDown(SteamVR_Input_Sources.Any)) //used to check if the button has been pressed
+        if (biteBehaviour.bitten == true)
         {
-            Debug.Log("Bite Button Pressed");
-        }
-
-        if (biteAction.GetStateDown(SteamVR_Input_Sources.Any) && touchingObject)
-        {
-            Destroy(gameObject);
-            Debug.Log("touching obj");
-        }
-
-        if (biteAction.GetStateDown(SteamVR_Input_Sources.Any) && bitten == true)
-        {
-            Destroy(gameObject);
-            Debug.Log("bitten");
-        }
-
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        touchingObject = other.gameObject;
-    }
-
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag.Equals("Jaw") == true)
-        {
-            bitten = true;
+            enemyStatus.takeDamage();
         }
     }
-
-
-    void Grab(GameObject obj)
-    {
-        heldObject = obj;
-        obj.transform.SetParent(transform); //makes the object move with the jaw
-    }
-
-    void Release()
-    {
-        heldObject.transform.SetParent(null);
-        heldObject = null;
-    }
-
-
 }
+  

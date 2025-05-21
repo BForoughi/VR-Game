@@ -19,10 +19,13 @@ public class EnemyStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (currentHealth > maxHealth)
+        {
+            die();
+        }
     }
 
-    void takeDamage()
+    public void takeDamage()
     {
         currentHealth -= 1;
         if (currentHealth < 1)
