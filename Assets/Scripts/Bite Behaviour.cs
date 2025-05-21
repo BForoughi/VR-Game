@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,66 +13,52 @@ public class BiteBehaviour : MonoBehaviour
     public SteamVR_Action_Boolean biteAction; //accesses the controllers input
     private GameObject heldObject;
     private GameObject touchingObject;
-    private bool bitten;
+    public bool jawCollision;
+    public bool bitten;
 
     public SphereCollider sphereCollider; //collider of the VR player head
 
 
-
-    //void Awake()
-    //{
-    //    DontDestroyOnLoad(this.gameObject);
-    //}
-
- 
-
     void Update()
     {
-        if (biteAction.GetStateDown(SteamVR_Input_Sources.Any)) //used to check if the button has been pressed
-        {
-            Debug.Log("Bite Button Pressed"); 
-        }
+        //if (biteAction.GetStateDown(SteamVR_Input_Sources.Any)) //used to check if the button has been pressed
+        //{
+        //    Debug.Log("Bite Button Pressed");
+        //}
 
-        if (biteAction.GetStateDown(SteamVR_Input_Sources.Any) && touchingObject) 
+        if (biteAction.GetStateDown(SteamVR_Input_Sources.Any) && jawCollision == true)
         {
-            Destroy(gameObject);
-            Debug.Log("touching obj");
-        }
-
-        if (biteAction.GetStateDown(SteamVR_Input_Sources.Any) && bitten == true)
-        {
-            Destroy(gameObject);
-            Debug.Log("bitten");
+            bitten = true;
         }
 
     }
 
     void OnTriggerEnter(Collider other)
     {
-        touchingObject = other.gameObject;
-    }
-
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag.Equals("Jaw") == true)
+        if (other.gameObject.CompareTag("Bitable"))
         {
-            bitten = true;
+            jawCollision = true;
+            //Debug.Log("jaw is touching " + gameObject.name + " and " + other.gameObject.name + " Col? " + jawCollision);
+        }
+        touchingObject = other.gameObject;
+
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Bitable"))
+        {
+            jawCollision = true;
+            //Debug.Log("jaw is staying " + gameObject.name + " and " + other.gameObject.name + " Col? " + jawCollision);
         }
     }
 
-
-    void Grab(GameObject obj)
+    void OnTriggerExit(Collider other)
     {
-        heldObject = obj;
-        obj.transform.SetParent(transform); //makes the object move with the jaw
+        if (other.gameObject.CompareTag("Bitable"))
+        {
+            jawCollision = false;
+            //Debug.Log("Col false? " + jawCollision);
+        }
     }
-
-    void Release()
-    {
-        heldObject.transform.SetParent(null);
-        heldObject = null;
-    }
-
-
 }
+

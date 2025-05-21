@@ -22,7 +22,7 @@ public class BasicEnemyPatrol : MonoBehaviour
 
         //once player opens the cage, or enters the room
         animator.SetBool("isPatrolling", true);
-        spotted = false;
+        //spotted = false;
     }
 
 
@@ -32,13 +32,13 @@ public class BasicEnemyPatrol : MonoBehaviour
         {
             indicator.SetActive(false); 
             //destination = patrol.position;
-            agent.destination = destination;
+            //agent.destination = destination;
         }    
         if(spotted == true) //enemy will chase the player
         {
             indicator.SetActive(true);
             //destination = Player.position;
-            agent.destination = destination;    
+            //agent.destination = destination;    
         }
     }
 
