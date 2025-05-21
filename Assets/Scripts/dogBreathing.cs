@@ -6,7 +6,9 @@ using UnityEngine;
 
 public class CheckBreathingSound : MonoBehaviour
 {
+    public AudioClip breathing;
     private AudioSource audioSource;
+    private bool playing = true;
 
     void Start()
     {
@@ -15,13 +17,17 @@ public class CheckBreathingSound : MonoBehaviour
 
     void Update()
     {
-        if (audioSource.isPlaying)
+        if (playing == true)
         {
-            Debug.Log("Breathing sound is playing");
-        }
-        else
-        {
-            Debug.Log("Breathing sound is NOT playing");
-        }
+            playBreathing();
+            playing = false;    
+        }  
     }
+
+    void playBreathing()
+    {
+        audioSource.PlayOneShot(breathing);
+        Debug.Log("Breathing sound is playing");
+    }
+
 }
