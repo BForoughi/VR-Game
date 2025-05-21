@@ -12,7 +12,7 @@ public class BiteBehaviour : MonoBehaviour
     public SteamVR_Action_Boolean biteAction; //accesses the controllers input
     private GameObject heldObject;
     private GameObject touchingObject;
-    private bool bitten;
+    public bool jawCollision;
 
     public SphereCollider sphereCollider; //collider of the VR player head
 
@@ -32,13 +32,13 @@ public class BiteBehaviour : MonoBehaviour
             Debug.Log("Bite Button Pressed"); 
         }
 
-        if (biteAction.GetStateDown(SteamVR_Input_Sources.Any) && touchingObject) 
-        {
-            Destroy(gameObject);
-            Debug.Log("touching obj");
-        }
+        //if (biteAction.GetStateDown(SteamVR_Input_Sources.Any) && touchingObject) 
+        //{
+        //    Destroy(gameObject);
+        //    Debug.Log("touching obj");
+        //}
 
-        if (biteAction.GetStateDown(SteamVR_Input_Sources.Any) && bitten == true)
+        if (biteAction.GetStateDown(SteamVR_Input_Sources.Any) && jawCollision == true)
         {
             Destroy(gameObject);
             Debug.Log("bitten");
@@ -48,15 +48,22 @@ public class BiteBehaviour : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag.Equals("Jaw") == true)
+        {
+            jawCollision = true;
+            Debug.Log("jaw is touching");
+        }
         touchingObject = other.gameObject;
+     
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionStay(Collision collision)
     {
         if (collision.gameObject.tag.Equals("Jaw") == true)
         {
-            bitten = true;
+            jawCollision = true;
+            Debug.Log("jaw is touching");
         }
     }
 
