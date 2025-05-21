@@ -15,13 +15,14 @@ public class CheckBreathingSound : MonoBehaviour
 
     void Start()
     {
-       
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = breathing;
         if (playing == true)
         {
             audioSource.PlayOneShot(breathing);
             playing = false;    
         }
-        audioSource = GetComponent<AudioSource>();
+        
         startingTime = Time.time;
     }
 

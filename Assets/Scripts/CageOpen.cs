@@ -14,6 +14,16 @@ public class CageOpen : MonoBehaviour
     void Start()
     {
         audioSource = gameObject.GetComponent<AudioSource>();
+        if (cageOpen != null)
+        {
+            audioSource.clip = cageOpen;
+        }
+        else
+        {
+            Debug.LogWarning("CageOpen clip not set");
+        }
+
+            
     }
 
     // Update is called once per frame
