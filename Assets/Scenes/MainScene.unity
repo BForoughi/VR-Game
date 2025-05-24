@@ -13950,13 +13950,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1753481985}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.13386892, z: -0, w: 0.9909991}
-  m_LocalPosition: {x: -4.73, y: 2.9700003, z: -10.2}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -2.96, y: 2.9700003, z: -12.4}
   m_LocalScale: {x: 0.25603056, y: 7.388937, z: 4.830333}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1296158049}
-  m_LocalEulerAnglesHint: {x: 0, y: 15.386, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!65 &1753481987
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18010,6 +18010,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 2
   currentHealth: 0
+  deathFlag: 0
 --- !u!1001 &6331639142454782104
 PrefabInstance:
   m_ObjectHideFlags: 0
