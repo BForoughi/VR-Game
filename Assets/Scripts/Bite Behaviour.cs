@@ -14,6 +14,9 @@ public class BiteBehaviour : MonoBehaviour
     public bool jawCollision;
     public bool bitten;
 
+    public AudioSource audioSource;
+    public AudioClip biteSound;
+
 
     public SphereCollider sphereCollider; //collider of the VR player head
 
@@ -28,6 +31,7 @@ public class BiteBehaviour : MonoBehaviour
         if (biteAction.GetStateDown(SteamVR_Input_Sources.Any) && jawCollision == true)
         {
             bitten = true;
+            playBiteSound();
             //call audio function
         }
 
@@ -49,7 +53,7 @@ public class BiteBehaviour : MonoBehaviour
             jawCollision = true;
             //Debug.Log("jaw is staying " + gameObject.name + " and " + other.gameObject.name + " Col? " + jawCollision);
         }
-       
+
     }
 
     void OnTriggerExit(Collider other)
@@ -60,15 +64,25 @@ public class BiteBehaviour : MonoBehaviour
             //Debug.Log("Col false? " + jawCollision);
         }
     }
+    private void playBiteSound()
+    {
+        if (audioSource != null && biteSound != null)
+        {
+            audioSource.PlayOneShot(biteSound);
+            Debug.Log("Bite sound played.");
+
+        }
 
 
 
-    //audio function
+
+        //audio function
 
 
 
 
 
+
+    }
 
 }
-
