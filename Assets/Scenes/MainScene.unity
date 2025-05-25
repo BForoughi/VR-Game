@@ -3966,6 +3966,8 @@ MonoBehaviour:
     needsReinit: 0
   jawCollision: 0
   bitten: 0
+  audioSource: {fileID: 0}
+  biteSound: {fileID: 0}
   sphereCollider: {fileID: 446312587}
 --- !u!82 &446312589
 AudioSource:
@@ -7708,7 +7710,7 @@ GameObject:
   m_Component:
   - component: {fileID: 995759869}
   m_Layer: 0
-  m_Name: Cultist
+  m_Name: Old Cultist
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
