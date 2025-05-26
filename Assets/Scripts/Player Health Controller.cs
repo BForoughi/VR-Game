@@ -10,10 +10,13 @@ public class PlayerHealthController : MonoBehaviour
 
     public GameObject bodyCollider;
 
+    public HealthDisplayScript healthDisplay;
+
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
+        healthDisplay.UpdateHealthDisplay();
     }
 
     // Update is called once per frame
@@ -30,6 +33,7 @@ public class PlayerHealthController : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))  
         {
             TakeDamage();
+            healthDisplay.UpdateHealthDisplay();
         }
     }
 
