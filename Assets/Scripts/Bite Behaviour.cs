@@ -33,9 +33,11 @@ public class BiteBehaviour : MonoBehaviour
             bitten = true;
             playBiteSound();
             Debug.Log("button is pressed and jaw is touching");
-            //call audio function
         }
 
+        if (biteAction.GetStateDown(SteamVR_Input_Sources.Any)){
+            Debug.Log("Button is pressed");
+        }
     }
 
     void OnTriggerEnter(Collider other)

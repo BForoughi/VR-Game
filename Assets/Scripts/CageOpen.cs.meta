@@ -3,7 +3,10 @@ guid: aa59aca0700fb4739b1714a8fe9bd734
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - cageOpen: {fileID: 8300000, guid: 377529d17dab74baf9953d20931ef327, type: 3}
+  - animator: {instanceID: 0}
+  - leverBreak: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

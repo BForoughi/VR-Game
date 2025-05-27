@@ -7,11 +7,14 @@ public class BasicEnemyPatrol : MonoBehaviour
 {
 
     public Vector3 destination; //where the enemy will go
-    //public Transform Player, patrol; 
+    public Transform Player;
+    //public Transform Patrol;
     public NavMeshAgent agent;
-    public GameObject indicator;
+    //public GameObject indicator;
     public bool spotted; //determines whether the enemy can see the player
     public float searchTime;
+    public float attackDelay = 12;
+    public bool attackReady = false;
 
     public Animator animator;
 
@@ -21,7 +24,9 @@ public class BasicEnemyPatrol : MonoBehaviour
         animator = GetComponent<Animator>();
 
         //once player opens the cage, or enters the room
-        animator.SetBool("isPatrolling", true);
+        //add patrol logic
+        //animator.SetBool("isWalking", true);
+
         //spotted = false;
     }
 
@@ -30,31 +35,45 @@ public class BasicEnemyPatrol : MonoBehaviour
     {
         if (spotted == false) //enemy will follow the patrol path
         {
-            indicator.SetActive(false); 
+            //indicator.SetActive(false);
             //destination = patrol.position;
-            //agent.destination = destination;
+            agent.destination = destination;
         }    
         if(spotted == true) //enemy will chase the player
         {
-            indicator.SetActive(true);
-            //destination = Player.position;
-            //agent.destination = destination;    
+            //indicator.SetActive(true);
+            destination = Player.position;
+            agent.destination = destination;
         }
+
+        if (attackReady == true)
+        {
+            animator.SetBool("isAttacking", true);
+            Debug.Log("attacking");
+            StartCoroutine(EndAttack());
+        }
+        
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            spotted = true;
-        }
-    }
+    //void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
+    //        spotted = true;
+    //    }
+    //}
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             StartCoroutine(search());
         }
+    }
+
+    IEnumerator EndAttack()
+    {
+        yield return new WaitForSeconds(attackDelay);
+        animator.SetBool("isAttacking", false);
     }
     IEnumerator search()
     {
