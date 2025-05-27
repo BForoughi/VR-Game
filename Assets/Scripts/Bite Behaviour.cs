@@ -13,6 +13,7 @@ public class BiteBehaviour : MonoBehaviour
     public SteamVR_Action_Boolean biteAction; //accesses the controllers input
     public bool jawCollision;
     public bool bitten;
+    private bool hasBitten;
 
     public AudioSource audioSource;
     public AudioClip biteSound;
@@ -23,21 +24,25 @@ public class BiteBehaviour : MonoBehaviour
 
     void Update()
     {
-        //if (biteAction.GetStateDown(SteamVR_Input_Sources.Any)) //used to check if the button has been pressed
-        //{
-        //    Debug.Log("Bite Button Pressed");
-        //}
-
-        if (biteAction.GetStateDown(SteamVR_Input_Sources.Any) && jawCollision == true)
+        if (biteAction.GetStateDown(SteamVR_Input_Sources.Any) && jawCollision == true) //is true when the bite button pressed and jaw collider is touching
         {
             bitten = true;
-            playBiteSound();
             Debug.Log("button is pressed and jaw is touching");
         }
 
-        if (biteAction.GetStateDown(SteamVR_Input_Sources.Any)){
-            Debug.Log("Button is pressed");
+        if (bitten && !hasBitten) //plays the sound after bite and resets it
+        {
+            playBiteSound();
+            hasBitten = true;
         }
+
+        if (!bitten)
+        {
+            hasBitten = false;
+        }
+        //if (biteAction.GetStateDown(SteamVR_Input_Sources.Any)){
+        //    Debug.Log("Button is pressed");
+        //}
     }
 
     void OnTriggerEnter(Collider other)
@@ -69,23 +74,8 @@ public class BiteBehaviour : MonoBehaviour
     }
     private void playBiteSound()
     {
-        if (audioSource != null && biteSound != null)
-        {
             audioSource.PlayOneShot(biteSound);
             Debug.Log("Bite sound played.");
-
-        }
-
-
-
-
-        //audio function
-
-
-
-
-
-
     }
 
 }

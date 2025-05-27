@@ -10,25 +10,24 @@ public class CageOpen : MonoBehaviour
     public LeverBreak leverBreak;
 
 
-    // Start is called before the first frame update
+  
+    
     void Start()
     {
-        audioSource = gameObject.GetComponent<AudioSource>();
-        if (cageOpen != null)
-        {
-            audioSource.clip = cageOpen;
-        }
-        else
+        audioSource = GetComponent<AudioSource>();
+        if (cageOpen == null)
         {
             Debug.LogWarning("CageOpen clip not set");
         }
-
-            
     }
+
+
+    
 
     // Update is called once per frame
     void Update()
     {
+
         if (leverBreak.openDoor == true)
         {
             openCageDoor();

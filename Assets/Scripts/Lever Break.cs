@@ -7,7 +7,7 @@ public class LeverBreak : MonoBehaviour
 {
 
     public BiteBehaviour biteBehaviour;
-    public bool openDoor;
+    public bool openDoor = false;
     private bool trigger;
 
 
