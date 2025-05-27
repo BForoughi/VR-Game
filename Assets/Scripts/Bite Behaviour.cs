@@ -32,6 +32,7 @@ public class BiteBehaviour : MonoBehaviour
         {
             bitten = true;
             playBiteSound();
+            Debug.Log("button is pressed and jaw is touching");
             //call audio function
         }
 

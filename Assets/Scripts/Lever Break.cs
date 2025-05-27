@@ -22,6 +22,7 @@ public class LeverBreak : MonoBehaviour
         if (other.gameObject.CompareTag("Jaw"))
         {
             trigger = true;
+            Debug.Log("lever is touching the jaw");
         }
     }
 
@@ -30,6 +31,7 @@ public class LeverBreak : MonoBehaviour
         if (other.gameObject.CompareTag("Jaw"))
         {
             trigger = false;
+            Debug.Log("lever is no longer touching");
         }
     }
 
@@ -41,6 +43,7 @@ public class LeverBreak : MonoBehaviour
             Destroy(gameObject);
             openDoor = true;
             biteBehaviour.bitten = false;
+            Debug.Log("lever is broken");
         }
      
     }
