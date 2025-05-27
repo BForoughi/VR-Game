@@ -15037,7 +15037,7 @@ MonoBehaviour:
     needsReinit: 0
   jawCollision: 0
   bitten: 0
-  audioSource: {fileID: 0}
+  audioSource: {fileID: 1385693843}
   biteSound: {fileID: 8300000, guid: d2177256166d94b259c77c92967d182e, type: 3}
   sphereCollider: {fileID: 446312587}
 --- !u!82 &1385693843
@@ -15050,7 +15050,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b28ea879cdfcb4f7bb9c4009a1801c55, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.359
   m_Pitch: 1
@@ -15149,7 +15149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   breathing: {fileID: 8300000, guid: b28ea879cdfcb4f7bb9c4009a1801c55, type: 3}
-  delay: 0
+  delay: 23
 --- !u!4 &1385693845 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6701881552132391891, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}

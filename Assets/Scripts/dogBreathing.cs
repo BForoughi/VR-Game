@@ -10,7 +10,7 @@ public class CheckBreathingSound : MonoBehaviour
     private AudioSource audioSource;
     private bool playing = true;
 
-    public float delay = 23f; //can be changed to match enemy speed
+    public float delay = 23; //can be changed to match enemy speed
     float startingTime = 0f;
 
     void Start()
