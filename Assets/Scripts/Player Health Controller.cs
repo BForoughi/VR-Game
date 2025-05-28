@@ -9,6 +9,11 @@ public class PlayerHealthController : MonoBehaviour
     public int maxHealth = 5;
 
 
+    public GameObject canvasPrefab;   
+    public GameObject panelPrefab;
+
+    public bool hasDied = false;
+
     public HealthDisplayScript healthDisplay;
 
     // Start is called before the first frame update
@@ -16,6 +21,8 @@ public class PlayerHealthController : MonoBehaviour
     {
         currentHealth = maxHealth;
         //healthDisplay.UpdateHealthDisplay();
+
+       
     }
 
     // Update is called once per frame
@@ -38,6 +45,30 @@ public class PlayerHealthController : MonoBehaviour
     void Die()
     {
         Debug.Log("player should be dead");
-        //death screen
+        if (!hasDied) //only calls the function once
+        {
+            Debug.Log("death screen");
+            DeathScreen();
+            hasDied = true;
+        }
     }
+
+    void DeathScreen()
+    {
+        Camera vrCamera = Camera.main;
+        if (vrCamera == null)
+        {
+            Debug.LogError("MainCamera not found. Make sure your VR camera has the 'MainCamera' tag.");
+            return;
+        }
+
+        GameObject canvasInstance = Instantiate(canvasPrefab);
+        Canvas canvasComponent = canvasInstance.GetComponent<Canvas>();
+        if (canvasComponent.renderMode == RenderMode.WorldSpace)
+        {
+            canvasComponent.worldCamera = vrCamera;
+        }
+        GameObject panelInstance = Instantiate(panelPrefab, canvasInstance.transform, false);
+    }
+
 }

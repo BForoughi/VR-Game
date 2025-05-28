@@ -15739,10 +15739,10 @@ AudioSource:
   m_GameObject: {fileID: 1385693837}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 248799cb4acba48f7b3ee842a80f788c, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.359
+  m_Volume: 0.931
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -15853,6 +15853,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 0
   maxHealth: 5
+  canvasPrefab: {fileID: 4539982880287651185, guid: 66b8e9318fa74d941b71088e7514a36b, type: 3}
+  panelPrefab: {fileID: 3278190759074709756, guid: 11d6bd6cf5820914b9f261063e4d5037, type: 3}
   healthDisplay: {fileID: 0}
 --- !u!1 &1388727051
 GameObject:
@@ -27052,7 +27054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6701881552132391891, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9364275
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6701881552132391891, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
       propertyPath: m_LocalRotation.x
@@ -27060,7 +27062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6701881552132391891, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.35086125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6701881552132391891, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
       propertyPath: m_LocalRotation.z
@@ -27072,7 +27074,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6701881552132391891, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -41.08
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6701881552132391891, guid: 5b8da6d1961b6f8448d691ed94521599, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
