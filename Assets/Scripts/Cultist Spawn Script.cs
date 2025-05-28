@@ -51,10 +51,9 @@ public class CultistSpawnScript : MonoBehaviour
             case 1:
                 if (!case1Finish)
                 {
-                   
                     SpawnCultist();
                     SpawnCultist();
-                    KitchenDoor.openDoor();
+                    //KitchenDoor.openDoor(); 
                     case1Finish = true;
                 }
                 break;
@@ -80,12 +79,10 @@ public class CultistSpawnScript : MonoBehaviour
     {
         Transform spawnTransform = spawnPoints[spawnIndex];
         GameObject newCultist = Instantiate(cultistPrefab, spawnTransform.position, spawnTransform.rotation);
-        //newCultist.GetComponent<Transform>().position.x = x;
-        //newCultist.GetComponent<Transform>().position.x = x;
-        //newCultist.GetComponent<Transform>().position.x = x;
         newCultist.GetComponent<EnemyStatus>().cultistSpawn = this;
         newCultist.GetComponent<BasicEnemyPatrol>().Player = Player.GetComponent<Transform>();
         WeakSpots = newCultist.GetComponentsInChildren<WSBiteBehaviour>();
+
         foreach(WSBiteBehaviour script in WeakSpots)
         {
             script.biteBehaviour = JawCollider.GetComponent<BiteBehaviour>();
