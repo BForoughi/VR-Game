@@ -14,7 +14,7 @@ public class BasicEnemyPatrol : MonoBehaviour
     public float patrolRadius = 100f;
 
     public float searchTime;
-    public float attackDelay = 12;
+    public float attackDelay = 2;
     public bool attackReady = false;
 
     public Animator animator;
@@ -24,9 +24,6 @@ public class BasicEnemyPatrol : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
-
-        //add patrol logic
-
     }
 
 
@@ -40,7 +37,6 @@ public class BasicEnemyPatrol : MonoBehaviour
                 }
  
            
-            
 
         }    
         if(spotted == true) //enemy will chase the player
@@ -53,10 +49,19 @@ public class BasicEnemyPatrol : MonoBehaviour
         {
             animator.SetBool("isAttacking", true);
             agent.speed = 0;
-            Debug.Log("attacking");
+            //makes the enemy face the player when attacking
+            Vector3 enemyDirection = Player.position - transform.position;
+            enemyDirection.y = 0; 
+            if (enemyDirection != Vector3.zero)
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(enemyDirection);
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
+            }
+
             StartCoroutine(EndAttack());
         }
-        
+
+
     }
 
     public Vector3 GetRandomNavMeshPoint(Vector3 center, float range)

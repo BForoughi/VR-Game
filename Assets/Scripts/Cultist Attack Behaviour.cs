@@ -21,7 +21,7 @@ public class CultistAttackBehaviour : MonoBehaviour
     {
         if (other.CompareTag("Player")){
             basicEnemyPatrol.attackReady = true;
-            Debug.Log("player in attack range");
+            //Debug.Log("player in attack range");
         }
     }
 

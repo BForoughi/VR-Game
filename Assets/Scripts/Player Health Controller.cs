@@ -8,7 +8,6 @@ public class PlayerHealthController : MonoBehaviour
     public int currentHealth;
     public int maxHealth = 5;
 
-    public GameObject bodyCollider;
 
     public HealthDisplayScript healthDisplay;
 
@@ -16,7 +15,7 @@ public class PlayerHealthController : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        healthDisplay.UpdateHealthDisplay();
+        //healthDisplay.UpdateHealthDisplay();
     }
 
     // Update is called once per frame
@@ -28,22 +27,17 @@ public class PlayerHealthController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy"))  
-        {
-            TakeDamage();
-            healthDisplay.UpdateHealthDisplay();
-        }
-    }
+ 
 
-    void TakeDamage()
+   public void TakeDamage()
     {
         currentHealth -= 1;
+        Debug.Log("player has been hit");
     }
 
     void Die()
     {
+        Debug.Log("player should be dead");
         //death screen
     }
 }
