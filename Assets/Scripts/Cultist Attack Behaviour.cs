@@ -29,7 +29,7 @@ public class CultistAttackBehaviour : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            //basicEnemyPatrol.attackReady = false;
+            basicEnemyPatrol.attackReady = false;
         }
     }
 

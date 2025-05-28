@@ -51,7 +51,13 @@ public class CultistSpawnScript : MonoBehaviour
                     case1Finish = true;
                 }
                 break;
-
+            case 3:
+                if (!case3Finish)
+                {
+                    KitchenDoor.openDoor();
+                    case3Finish = true;
+                }
+                break;
             default:
                 break;
         }

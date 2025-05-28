@@ -9,10 +9,10 @@ public class BasicEnemyPatrol : MonoBehaviour
 
     public Vector3 destination; //where the enemy will go
     public Transform Player;
-    //public Transform Patrol;
     public NavMeshAgent agent;
-    //public GameObject indicator;
     public bool spotted; //determines whether the enemy can see the player
+    public float patrolRadius = 100f;
+
     public float searchTime;
     public float attackDelay = 12;
     public bool attackReady = false;
@@ -23,12 +23,10 @@ public class BasicEnemyPatrol : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
 
-        //once player opens the cage, or enters the room
         //add patrol logic
-        //animator.SetBool("isWalking", true);
 
-        //spotted = false;
     }
 
 
@@ -36,13 +34,17 @@ public class BasicEnemyPatrol : MonoBehaviour
     {
         if (spotted == false) //enemy will follow the patrol path
         {
-            //indicator.SetActive(false);
-            //destination = patrol.position;
-            agent.destination = destination;
+            if (!agent.pathPending && agent.remainingDistance < 0.5f)
+                {
+                    Patrol();
+                }
+ 
+           
+            
+
         }    
         if(spotted == true) //enemy will chase the player
         {
-            //indicator.SetActive(true);
             destination = Player.position;
             agent.destination = destination;
         }
@@ -50,19 +52,34 @@ public class BasicEnemyPatrol : MonoBehaviour
         if (attackReady == true)
         {
             animator.SetBool("isAttacking", true);
+            agent.speed = 0;
             Debug.Log("attacking");
             StartCoroutine(EndAttack());
         }
         
     }
 
-    //void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("Player"))
-    //    {
-    //        spotted = true;
-    //    }
-    //}
+    public Vector3 GetRandomNavMeshPoint(Vector3 center, float range)
+    {
+        Vector3 randomDirection = Random.insideUnitSphere * range;
+        randomDirection += center;
+
+        NavMeshHit hit;
+        if (NavMesh.SamplePosition(randomDirection, out hit, range, NavMesh.AllAreas))
+        {
+            return hit.position;
+        }
+
+        // If no valid point found, return current position as fallback
+        return center;
+    }
+
+    void Patrol()
+    {
+        destination = GetRandomNavMeshPoint(transform.position, patrolRadius);
+        agent.SetDestination(destination);
+    }
+
     void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -75,6 +92,7 @@ public class BasicEnemyPatrol : MonoBehaviour
     {
         yield return new WaitForSeconds(attackDelay);
         animator.SetBool("isAttacking", false);
+        agent.speed = 3.5f;
     }
     IEnumerator search()
     {
