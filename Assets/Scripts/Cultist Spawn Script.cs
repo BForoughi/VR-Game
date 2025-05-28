@@ -24,11 +24,17 @@ public class CultistSpawnScript : MonoBehaviour
     public bool case6Finish = false;
     public bool case7Finish = false;
 
+    public Transform[] spawnPoints;
+    private int spawnIndex = 0;
+
     // Start is called before the first frame update
     void Start()
     {
         
     }
+
+
+    //public Transform spawnPoint1;
 
     // Update is called once per frame
     void Update()
@@ -45,6 +51,7 @@ public class CultistSpawnScript : MonoBehaviour
             case 1:
                 if (!case1Finish)
                 {
+                   
                     SpawnCultist();
                     SpawnCultist();
                     KitchenDoor.openDoor();
@@ -71,8 +78,11 @@ public class CultistSpawnScript : MonoBehaviour
     }
     void SpawnCultist()
     {
-        
-        GameObject newCultist = Instantiate(cultistPrefab);
+        Transform spawnTransform = spawnPoints[spawnIndex];
+        GameObject newCultist = Instantiate(cultistPrefab, spawnTransform.position, spawnTransform.rotation);
+        //newCultist.GetComponent<Transform>().position.x = x;
+        //newCultist.GetComponent<Transform>().position.x = x;
+        //newCultist.GetComponent<Transform>().position.x = x;
         newCultist.GetComponent<EnemyStatus>().cultistSpawn = this;
         newCultist.GetComponent<BasicEnemyPatrol>().Player = Player.GetComponent<Transform>();
         WeakSpots = newCultist.GetComponentsInChildren<WSBiteBehaviour>();

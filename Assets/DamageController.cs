@@ -25,20 +25,31 @@ public class DamageController : MonoBehaviour
     {
         if (damageable && other.gameObject.CompareTag("Damage"))
         {
-            Debug.Log("player hit");
+            Debug.Log("hit by " + other);
             playerHealth.TakeDamage();
             damageable = false;
-            StartCoroutine(IFrames());
+            //StartCoroutine(IFrames());
 
         }
     }
 
-    IEnumerator IFrames()
+    private void OnTriggerExit(Collider other)
     {
-        Debug.Log("starting IFrame after" + IFrameLength);
-        Debug.Log("player is not damageable");
-        yield return new WaitForSeconds(IFrameLength);
-        damageable = true;
-        Debug.Log("player is damage");
+        if (other.gameObject.CompareTag("Damage"))
+        {
+            damageable = true;
+            Debug.Log("you can now be hit again");
+
+        }
+
     }
+
+    //IEnumerator IFrames()
+    //{
+    //    Debug.Log("starting IFrame after" + IFrameLength);
+    //    Debug.Log("player is not damageable");
+    //    yield return new WaitForSeconds(IFrameLength);
+    //    damageable = true;
+    //    Debug.Log("player is damage");
+    //}
 }
