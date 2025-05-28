@@ -7,6 +7,11 @@ public class FridgeSoundPlayer : MonoBehaviour
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
+    }
+
+
+    private void Update()
+    {
         if (audioSource != null && !audioSource.isPlaying)
         {
             audioSource.loop = true;
