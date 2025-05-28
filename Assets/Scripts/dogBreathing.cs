@@ -10,36 +10,22 @@ public class CheckBreathingSound : MonoBehaviour
     private AudioSource audioSource;
     private bool playing = true;
 
-    public float delay = 23; 
-    float startingTime = 0f;
+
 
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
         audioSource.clip = breathing;
-        if (playing == true)
-        {
-            audioSource.PlayOneShot(breathing);
-            playing = false;    
-        }
-        
-        startingTime = Time.time;
+        audioSource.Play();
     }
 
     void Update()
     {
-
-        if (Time.time > startingTime + delay) //plays footsteps after the delay time has passed
+        // Check if audioSource is done playing
+        if (!audioSource.isPlaying)
         {
-            startingTime = Time.time;
-            playBreathing();
+            audioSource.Play();
+            Debug.Log("Breathing sound restarted");
         }
     }
-
-    void playBreathing()
-    {
-        audioSource.PlayOneShot(breathing);
-        Debug.Log("Breathing sound is playing");
-    }
-
 }

@@ -6,21 +6,40 @@ public class kitchenDoorOpen : MonoBehaviour
 {
     public AudioClip openSound;
     private AudioSource audioSource;
-    // Start is called before the first frame update
-    void Start()
+    public Animator animator;
+    public EnemyStatus enemyStatus;
+
+    private bool doorOpened;
+
+    public bool testDoor;
+
+
+    private void Start()
     {
         audioSource = GetComponent<AudioSource>();
-        
-            if (audioSource == null)
-            {
-                audioSource = gameObject.AddComponent<AudioSource>();
-            }
-            audioSource.playOnAwake = false;
+    }
+
+    void Update()
+    {
+
+        if (enemyStatus.deathFlag == 3 && !doorOpened)
+        {
+            playDoorOpenSound();
+            doorOpened = true;
+            animator.SetBool("isOpen", true);
         }
+
+
+        if (enemyStatus.deathFlag != 3)
+        {
+            doorOpened = false;
+        }
+    }
     
     // Update is called once per frame
    public void playDoorOpenSound()
     {
-        audioSource.PlayOneShot(openSound); 
+        audioSource.PlayOneShot(openSound);
+        Debug.Log("Kitchen Door sound is playing");
     }
 }
