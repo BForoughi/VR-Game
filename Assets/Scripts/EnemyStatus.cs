@@ -9,7 +9,7 @@ public class EnemyStatus : MonoBehaviour
     public int maxHealth = 2;
     public int currentHealth;
 
-    public int deathFlag;
+    public CultistSpawnScript cultistSpawn;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +39,6 @@ public class EnemyStatus : MonoBehaviour
     void die()
         {
             Destroy(gameObject);
-            deathFlag += 1; //adds to the dead enemy counter
+            cultistSpawn.AddDeath();
         }
 }

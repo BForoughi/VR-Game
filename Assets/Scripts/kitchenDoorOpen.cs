@@ -7,7 +7,7 @@ public class kitchenDoorOpen : MonoBehaviour
     public AudioClip openSound;
     private AudioSource audioSource;
     public Animator animator;
-    public EnemyStatus enemyStatus;
+    //public CultistSpawnScript CultistSpawn;
 
     private bool doorOpened;
 
@@ -22,18 +22,18 @@ public class kitchenDoorOpen : MonoBehaviour
     void Update()
     {
 
-        if (enemyStatus.deathFlag == 3 && !doorOpened)
-        {
-            playDoorOpenSound();
-            doorOpened = true;
-            animator.SetBool("isOpen", true);
-        }
+        //if (CultistSpawn.deathFlag == 1 && !doorOpened)
+        //{
+        //    playDoorOpenSound();
+        //    doorOpened = true;
+        //    animator.SetBool("isOpen", true);
+        //}
 
 
-        if (enemyStatus.deathFlag != 3)
-        {
-            doorOpened = false;
-        }
+        //if (CultistSpawn.deathFlag != 3)
+        //{
+        //    doorOpened = false;
+        //}
     }
     
     // Update is called once per frame
@@ -41,5 +41,15 @@ public class kitchenDoorOpen : MonoBehaviour
     {
         audioSource.PlayOneShot(openSound);
         Debug.Log("Kitchen Door sound is playing");
+    }
+   
+    public void openDoor()
+    {
+        if (!doorOpened)
+        {
+            playDoorOpenSound();
+            doorOpened = true;
+            animator.SetBool("isOpen", true);
+        }
     }
 }

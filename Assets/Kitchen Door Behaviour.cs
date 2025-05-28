@@ -5,7 +5,7 @@ using UnityEngine;
 public class KitchenDoorBehavioour : MonoBehaviour
 {
     public Animator animator;
-    public EnemyStatus enemyStatus;
+    public CultistSpawnScript CultistSpawn;
 
     void Start()
     {
@@ -15,7 +15,7 @@ public class KitchenDoorBehavioour : MonoBehaviour
 
     void Update()
     {
-        if (enemyStatus.deathFlag == 3)
+        if (CultistSpawn.deathFlag == 1)
         {
             animator.SetBool("isOpen", true);
         }
