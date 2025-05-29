@@ -10,7 +10,10 @@ public class CultistSpawnScript : MonoBehaviour
     
     public int deathFlag;
     public kitchenDoorOpen KitchenDoor;
-    
+    public BedroomDoorOpen BedroomDoor;
+    public BasementDoorOpen BasementDoor;
+
+
     public GameObject cultistPrefab;
     public GameObject JawCollider;
     public GameObject Player;
@@ -62,6 +65,7 @@ public class CultistSpawnScript : MonoBehaviour
             case 4:
                 if (!case3Finish)
                 {
+                    BedroomDoor.openDoor();
                     SpawnCultist(5);
                     SpawnCultist(6);
                     SpawnCultist(7);
@@ -71,6 +75,7 @@ public class CultistSpawnScript : MonoBehaviour
             case 7:
                 if (!case4Finish)
                 {
+                    BasementDoor.openDoor();
                     SpawnCultist(8);
                     SpawnCultist(9);
                     SpawnCultist(10);

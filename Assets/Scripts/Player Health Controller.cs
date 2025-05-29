@@ -6,7 +6,7 @@ public class PlayerHealthController : MonoBehaviour
 
 {
     public int currentHealth;
-    private int maxHealth = 5;
+    private int maxHealth = 500;
 
 
     public GameObject canvasPrefab;   
