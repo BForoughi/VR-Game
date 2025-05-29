@@ -45,27 +45,39 @@ public class CultistSpawnScript : MonoBehaviour
                 if (!case2Finish)
                 {
                     SpawnCultist(0);
+                    
                     case2Finish = true;
                 }
                 break;
             case 1:
                 if (!case1Finish)
                 {
-                    SpawnCultist(1);
+                    KitchenDoor.openDoor();
                     SpawnCultist(2);
                     SpawnCultist(3);
-                    
-                    //KitchenDoor.openDoor(); 
+                    SpawnCultist(4);
                     case1Finish = true;
                 }
                 break;
-            case 3:
+            case 4:
                 if (!case3Finish)
                 {
-                    KitchenDoor.openDoor();
+                    SpawnCultist(5);
+                    SpawnCultist(6);
+                    SpawnCultist(7);
                     case3Finish = true;
                 }
                 break;
+            case 7:
+                if (!case4Finish)
+                {
+                    SpawnCultist(8);
+                    SpawnCultist(9);
+                    SpawnCultist(10);
+                    case4Finish = true;
+                }
+                break;
+
             default:
                 break;
         }
