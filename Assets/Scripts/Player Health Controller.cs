@@ -14,14 +14,17 @@ public class PlayerHealthController : MonoBehaviour
 
     public bool hasDied = false;
 
+    public AudioClip playerHit;
+    public AudioSource audioSource;
+
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
-        //healthDisplay.UpdateHealthDisplay();
 
-       
+        audioSource = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
@@ -38,6 +41,7 @@ public class PlayerHealthController : MonoBehaviour
    public void TakeDamage()
     {
         currentHealth -= 1;
+        playHitSound();
         Debug.Log("player has been hit");
     }
 
@@ -50,6 +54,7 @@ public class PlayerHealthController : MonoBehaviour
             DeathScreen();
             hasDied = true;
             Destroy(gameObject);
+            
         }
     }
 
@@ -77,6 +82,11 @@ public class PlayerHealthController : MonoBehaviour
         GameObject panelInstance = Instantiate(panelPrefab, canvasInstance.transform, false);
 
 
+    }
+
+    void playHitSound()
+    {
+        audioSource.PlayOneShot(playerHit);
     }
 
 }
