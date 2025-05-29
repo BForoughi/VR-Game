@@ -49,6 +49,7 @@ public class PlayerHealthController : MonoBehaviour
             Debug.Log("death screen");
             DeathScreen();
             hasDied = true;
+            Destroy(gameObject);
         }
     }
 
