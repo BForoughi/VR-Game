@@ -12,7 +12,11 @@ public class DamageController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        playerHealth = GetComponent<PlayerHealthController>();
+        //playerHealth = GetComponent<PlayerHealthController>();
+        if (playerHealth == null)
+        {
+            Debug.LogError("PlayerHealthController is missing!");
+        }
     }
 
     // Update is called once per frame
