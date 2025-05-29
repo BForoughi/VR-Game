@@ -19,7 +19,7 @@ public class CultistSightBehaviour : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("enetered enemy sight range");
+        //Debug.Log("enetered enemy sight range");
         if (other.CompareTag("Player")){
             basicEnemyPatrol.spotted = true;    
         }
@@ -27,7 +27,7 @@ public class CultistSightBehaviour : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Debug.Log("left enemy sight range");
+        //Debug.Log("left enemy sight range");
         if (other.CompareTag("Player"))
         {
             basicEnemyPatrol.spotted = false;

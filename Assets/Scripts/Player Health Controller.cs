@@ -14,8 +14,7 @@ public class PlayerHealthController : MonoBehaviour
 
     public bool hasDied = false;
 
-    public AudioClip playerHit;
-    public AudioSource audioSource;
+ 
 
 
     // Start is called before the first frame update
@@ -23,7 +22,6 @@ public class PlayerHealthController : MonoBehaviour
     {
         currentHealth = maxHealth;
 
-        audioSource = GetComponent<AudioSource>();
         
     }
 
@@ -41,13 +39,12 @@ public class PlayerHealthController : MonoBehaviour
    public void TakeDamage()
     {
         currentHealth -= 1;
-        playHitSound();
-        //Debug.Log("player has been hit");
+        Debug.Log("player has been hit");
     }
 
     void Die()
     {
-        Debug.Log("player should be dead");
+        //Debug.Log("player should be dead");
         if (!hasDied) //only calls the function once
         {
             //Debug.Log("death screen");
@@ -84,9 +81,6 @@ public class PlayerHealthController : MonoBehaviour
 
     }
 
-    void playHitSound()
-    {
-        audioSource.PlayOneShot(playerHit);
-    }
+   
 
 }

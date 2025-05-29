@@ -21,6 +21,10 @@ public class BiteBehaviour : MonoBehaviour
 
     public SphereCollider sphereCollider; //collider of the VR player head
 
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {

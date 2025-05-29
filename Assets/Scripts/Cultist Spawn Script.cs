@@ -44,15 +44,17 @@ public class CultistSpawnScript : MonoBehaviour
             case 0:
                 if (!case2Finish)
                 {
-                    SpawnCultist();
+                    SpawnCultist(0);
                     case2Finish = true;
                 }
                 break;
             case 1:
                 if (!case1Finish)
                 {
-                    SpawnCultist();
-                    SpawnCultist();
+                    SpawnCultist(1);
+                    SpawnCultist(2);
+                    SpawnCultist(3);
+                    
                     //KitchenDoor.openDoor(); 
                     case1Finish = true;
                 }
@@ -75,9 +77,9 @@ public class CultistSpawnScript : MonoBehaviour
         deathFlag += 1;
         Debug.Log("Deathflag += 1");
     }
-    void SpawnCultist()
+    void SpawnCultist(int x)
     {
-        Transform spawnTransform = spawnPoints[spawnIndex];
+        Transform spawnTransform = spawnPoints[x];
         GameObject newCultist = Instantiate(cultistPrefab, spawnTransform.position, spawnTransform.rotation);
         newCultist.GetComponent<EnemyStatus>().cultistSpawn = this;
         newCultist.GetComponent<BasicEnemyPatrol>().Player = Player.GetComponent<Transform>();

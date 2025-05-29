@@ -35,7 +35,7 @@ public class BasicEnemyPatrol : MonoBehaviour
     {
         if (spotted == false) //enemy will follow the patrol path
         {
-            Debug.Log("player cant see you");
+            //Debug.Log("player cant see you");
 
             if (!agent.pathPending && agent.remainingDistance < 1.5f) //distance between points
                 {
@@ -45,7 +45,7 @@ public class BasicEnemyPatrol : MonoBehaviour
         }    
         if(spotted == true) //enemy will chase the player
         {
-            Debug.Log("player can see you");
+            //Debug.Log("player can see you");
             destination = Player.position;
             agent.destination = destination;
         }

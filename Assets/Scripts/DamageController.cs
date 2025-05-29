@@ -10,7 +10,8 @@ public class DamageController : MonoBehaviour
     public float IFrameLength = 2;
     private float lastDamageTime = -Mathf.Infinity;
 
-
+    public AudioClip playerHit;
+    public AudioSource audioSource;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,9 @@ public class DamageController : MonoBehaviour
         {
             Debug.LogError("PlayerHealthController is missing!");
         }
+
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     // Update is called once per frame
@@ -38,34 +42,40 @@ public class DamageController : MonoBehaviour
         //    StartCoroutine(IFrames());
         //}
 
-        if (Time.time - lastDamageTime > IFrameLength)
+        if (Time.time - lastDamageTime > IFrameLength && other.gameObject.CompareTag("Damage"))
         {
             lastDamageTime = Time.time;
-
+            playHitSound();
             Debug.Log("hite by " + other);
             //damageable = false;
             playerHealth.TakeDamage();
 
         }
-
-        //private void OnTriggerExit(Collider other)
-        //{
-        //    if (other.gameObject.CompareTag("Damage"))
-        //    {
-        //        damageable = true;
-        //        Debug.Log("you can now be hit again");
-
-        //    }
-
-        //}
-
-        IEnumerator IFrames()
-        {
-            Debug.Log("starting IFrame after" + IFrameLength);
-            Debug.Log("player is not damageable");
-            yield return new WaitForSeconds(IFrameLength);
-            damageable = true;
-            Debug.Log("player is damage");
-        }
     }
+
+        void playHitSound()
+        {
+            audioSource.PlayOneShot(playerHit);
+            Debug.Log("hit sound");
+        }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    if (other.gameObject.CompareTag("Damage"))
+    //    {
+    //        damageable = true;
+    //        Debug.Log("you can now be hit again");
+
+    //    }
+
+    //}
+
+    //IEnumerator IFrames()
+    //{
+    //    Debug.Log("starting IFrame after" + IFrameLength);
+    //    Debug.Log("player is not damageable");
+    //    yield return new WaitForSeconds(IFrameLength);
+    //    damageable = true;
+    //    Debug.Log("player is damage");
+    //}
+
 }
