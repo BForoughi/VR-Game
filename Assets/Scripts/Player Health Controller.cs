@@ -6,7 +6,7 @@ public class PlayerHealthController : MonoBehaviour
 
 {
     public int currentHealth;
-    public int maxHealth = 5;
+    private int maxHealth = 2;
 
 
     public GameObject canvasPrefab;   
@@ -14,7 +14,6 @@ public class PlayerHealthController : MonoBehaviour
 
     public bool hasDied = false;
 
-    public HealthDisplayScript healthDisplay;
 
     // Start is called before the first frame update
     void Start()
@@ -63,12 +62,20 @@ public class PlayerHealthController : MonoBehaviour
         }
 
         GameObject canvasInstance = Instantiate(canvasPrefab);
+        //spawns the canvas infront of the player
+        canvasInstance.transform.position = vrCamera.transform.position + vrCamera.transform.forward * 2f;
+        canvasInstance.transform.rotation = Quaternion.LookRotation(vrCamera.transform.forward);
+        canvasInstance.transform.localScale = Vector3.one * 0.002f; 
+
         Canvas canvasComponent = canvasInstance.GetComponent<Canvas>();
         if (canvasComponent.renderMode == RenderMode.WorldSpace)
         {
             canvasComponent.worldCamera = vrCamera;
         }
+
         GameObject panelInstance = Instantiate(panelPrefab, canvasInstance.transform, false);
+
+
     }
 
 }

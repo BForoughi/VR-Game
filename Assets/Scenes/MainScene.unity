@@ -15855,7 +15855,7 @@ MonoBehaviour:
   maxHealth: 5
   canvasPrefab: {fileID: 4539982880287651185, guid: 66b8e9318fa74d941b71088e7514a36b, type: 3}
   panelPrefab: {fileID: 3278190759074709756, guid: 11d6bd6cf5820914b9f261063e4d5037, type: 3}
-  healthDisplay: {fileID: 0}
+  hasDied: 0
 --- !u!1 &1388727051
 GameObject:
   m_ObjectHideFlags: 0

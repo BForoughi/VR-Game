@@ -12,7 +12,7 @@ public class DamageController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerHealth = GetComponent<PlayerHealthController>();
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class DamageController : MonoBehaviour
     {
         if (damageable && other.gameObject.CompareTag("Damage"))
         {
-            Debug.Log("hit by " + other);
+            Debug.Log("hite by " + other);
             playerHealth.TakeDamage();
             damageable = false;
             //StartCoroutine(IFrames());
