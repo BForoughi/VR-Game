@@ -4513,7 +4513,7 @@ GameObject:
   - component: {fileID: 364093353}
   m_Layer: 0
   m_Name: PlayerHitBox
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4527,8 +4527,8 @@ Transform:
   m_GameObject: {fileID: 364093351}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.178, z: 0}
-  m_LocalScale: {x: 1.8653373, y: 1.8653373, z: 1.8653373}
+  m_LocalPosition: {x: 0, y: -0.178, z: -0.020866}
+  m_LocalScale: {x: 1.3212557, y: 1.3212557, z: 1.3212557}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 369941168}
@@ -4547,7 +4547,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1385693849}
   damageable: 1
-  IFrameLength: 1
+  IFrameLength: 2
 --- !u!135 &364093354
 SphereCollider:
   m_ObjectHideFlags: 0

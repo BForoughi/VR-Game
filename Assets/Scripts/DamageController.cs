@@ -7,7 +7,10 @@ public class DamageController : MonoBehaviour
     public PlayerHealthController playerHealth;
     public bool damageable = true;
 
-    public float IFrameLength = 1f;
+    public float IFrameLength = 2;
+    private float lastDamageTime = -Mathf.Infinity;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -27,33 +30,42 @@ public class DamageController : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (damageable && other.gameObject.CompareTag("Damage"))
+        //if (damageable && other.gameObject.CompareTag("Damage"))
+        //{
+        //    Debug.Log("hite by " + other);
+        //    damageable = false;
+        //    playerHealth.TakeDamage();
+        //    StartCoroutine(IFrames());
+        //}
+
+        if (Time.time - lastDamageTime > IFrameLength)
         {
+            lastDamageTime = Time.time;
+
             Debug.Log("hite by " + other);
+            //damageable = false;
             playerHealth.TakeDamage();
-            damageable = false;
-            //StartCoroutine(IFrames());
 
         }
-    }
 
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("Damage"))
+        //private void OnTriggerExit(Collider other)
+        //{
+        //    if (other.gameObject.CompareTag("Damage"))
+        //    {
+        //        damageable = true;
+        //        Debug.Log("you can now be hit again");
+
+        //    }
+
+        //}
+
+        IEnumerator IFrames()
         {
+            Debug.Log("starting IFrame after" + IFrameLength);
+            Debug.Log("player is not damageable");
+            yield return new WaitForSeconds(IFrameLength);
             damageable = true;
-            Debug.Log("you can now be hit again");
-
+            Debug.Log("player is damage");
         }
-
     }
-
-    //IEnumerator IFrames()
-    //{
-    //    Debug.Log("starting IFrame after" + IFrameLength);
-    //    Debug.Log("player is not damageable");
-    //    yield return new WaitForSeconds(IFrameLength);
-    //    damageable = true;
-    //    Debug.Log("player is damage");
-    //}
 }

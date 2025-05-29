@@ -6,7 +6,7 @@ public class PlayerHealthController : MonoBehaviour
 
 {
     public int currentHealth;
-    private int maxHealth = 2;
+    private int maxHealth = 5;
 
 
     public GameObject canvasPrefab;   
@@ -42,7 +42,7 @@ public class PlayerHealthController : MonoBehaviour
     {
         currentHealth -= 1;
         playHitSound();
-        Debug.Log("player has been hit");
+        //Debug.Log("player has been hit");
     }
 
     void Die()
@@ -50,7 +50,7 @@ public class PlayerHealthController : MonoBehaviour
         Debug.Log("player should be dead");
         if (!hasDied) //only calls the function once
         {
-            Debug.Log("death screen");
+            //Debug.Log("death screen");
             DeathScreen();
             hasDied = true;
             Destroy(gameObject);
