@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Jaw
   - Bitable
+  - projectile
+  - FxTemporaire
+  - Damage
   layers:
   - Default
   - TransparentFX

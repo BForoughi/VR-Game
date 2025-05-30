@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,72 +11,75 @@ public class BiteBehaviour : MonoBehaviour
 {
 
     public SteamVR_Action_Boolean biteAction; //accesses the controllers input
-    private GameObject heldObject;
-    private GameObject touchingObject;
-    private bool jawCollision;
+    public bool jawCollision;
+    public bool bitten;
+    private bool hasBitten;
+
+    public AudioSource audioSource;
+    public AudioClip biteSound;
+
 
     public SphereCollider sphereCollider; //collider of the VR player head
 
-
-
-    //void Awake()
-    //{
-    //    DontDestroyOnLoad(this.gameObject);
-    //}
-
- 
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
-        if (biteAction.GetStateDown(SteamVR_Input_Sources.Any)) //used to check if the button has been pressed
+        if (biteAction.GetStateDown(SteamVR_Input_Sources.Any) && jawCollision == true) //is true when the bite button pressed and jaw collider is touching
         {
-            Debug.Log("Bite Button Pressed"); 
+            bitten = true;
+            Debug.Log("button is pressed and jaw is touching");
         }
 
-        //if (biteAction.GetStateDown(SteamVR_Input_Sources.Any) && touchingObject) 
-        //{
-        //    Destroy(gameObject);
-        //    Debug.Log("touching obj");
+        if (bitten && !hasBitten) //plays the sound after bite and resets it
+        {
+            playBiteSound();
+            hasBitten = true;
+        }
+
+        if (!bitten)
+        {
+            hasBitten = false;
+        }
+        //if (biteAction.GetStateDown(SteamVR_Input_Sources.Any)){
+        //    Debug.Log("Button is pressed");
         //}
-
-        if (biteAction.GetStateDown(SteamVR_Input_Sources.Any) && jawCollision == true)
-        {
-            Destroy(gameObject);
-            Debug.Log("bitten");
-        }
-
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag.Equals("Jaw") == true)
+        if (other.gameObject.CompareTag("Bitable"))
         {
             jawCollision = true;
-            Debug.Log("jaw is touching");
+            //Debug.Log("jaw is touching " + gameObject.name + " and " + other.gameObject.name + " Col? " + jawCollision);
         }
-        touchingObject = other.gameObject;
-     
+
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("Bitable"))
+        {
+            jawCollision = true;
+            //Debug.Log("jaw is staying " + gameObject.name + " and " + other.gameObject.name + " Col? " + jawCollision);
+        }
+
     }
 
     void OnTriggerExit(Collider other)
     {
-        jawCollision = false;
-
+        if (other.gameObject.CompareTag("Bitable"))
+        {
+            jawCollision = false;
+            //Debug.Log("Col false? " + jawCollision);
+        }
     }
-
-
-
-    void Grab(GameObject obj)
+    private void playBiteSound()
     {
-        heldObject = obj;
-        obj.transform.SetParent(transform); //makes the object move with the jaw
+            audioSource.PlayOneShot(biteSound);
+            Debug.Log("Bite sound played.");
     }
-
-    void Release()
-    {
-        heldObject.transform.SetParent(null);
-        heldObject = null;
-    }
-
 
 }
