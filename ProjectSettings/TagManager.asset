@@ -9,11 +9,12 @@ TagManager:
   - projectile
   - FxTemporaire
   - Damage
+  - CinemachineTarget
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - invisVR
   - Water
   - UI
   - 
