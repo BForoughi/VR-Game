@@ -12,7 +12,7 @@ public class movementCopier : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         transform.position = new Vector3(otherCube.transform.position.x-13, otherCube.transform.position.y, otherCube.transform.position.z);
         
